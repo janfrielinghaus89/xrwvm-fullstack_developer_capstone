@@ -1,6 +1,6 @@
 # Uncomment the required imports before adding the code
 from .models import CarMake, CarModel
-from .restapis import get_request, analyze_review_sentiments # , post_review
+from .restapis import get_request, analyze_review_sentiments
 
 # from django.shortcuts import render
 # from django.http import HttpResponseRedirect, HttpResponse
