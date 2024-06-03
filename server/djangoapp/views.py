@@ -1,6 +1,6 @@
 # Uncomment the required imports before adding the code
 from .models import CarMake, CarModel
-from .restapis import get_request, analyze_review_sentiments, post_review
+from .restapis import get_request, analyze_review_sentiments # , post_review
 
 # from django.shortcuts import render
 # from django.http import HttpResponseRedirect, HttpResponse
@@ -141,14 +141,14 @@ def get_dealer_details(request, dealer_id):
 # def add_review(request):
 def add_review(request):
     if (request.user.is_anonymous is False):
-        data = json.loads(request.body)
+        # data = json.loads(request.body)
         try:
             # response = post_review(data)
             return JsonResponse({"status": 200})
         except Exception as e:
-                    print(f"Error: {e}")
-                    return JsonResponse({"status": 401,
-                                         "message":
-                                         "Error in posting review"})
+            print(f"Error: {e}")
+            return JsonResponse({"status": 401,
+                                 "message":
+                                 "Error in posting review"})
     else:
         return JsonResponse({"status": 403, "message": "Unauthorized"})
